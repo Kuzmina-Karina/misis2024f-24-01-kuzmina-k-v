@@ -2,28 +2,19 @@
 
 
 int main(){
-    int n;
-    std::cin >>n;
+    int n, k;
+    int m=-INT_MAX;
+    std::cin >> n >> k;
     for (int i=0; i<n; i++){
-        int a;
-        int ch=0;
-        int s=1;
-        std::cin>>a;
-        std::vector<int>v;
-        while(a>0){
-            if (a%10!=0){
-                v.push_back((a%10)*s);
-                ch+=1;
-            }
-            a/=10;
-            s*=10;
+        int f, t;
+        std::cin >> f >> t;
+        if (k<t){
+            m=std::max(m, f-(t-k));
         }
-        std::cout << ch << std::endl;
-        for (int i=0; i<v.size(); i++){
-            std::cout << v[i] <<" ";
+        else{
+            m=std::max(m, f);
         }
-        std:: cout << std::endl;
- }
-
+    }
+    std::cout << m;
 return 0;
 }
