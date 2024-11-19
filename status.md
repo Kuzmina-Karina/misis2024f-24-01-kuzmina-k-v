@@ -1,4 +1,4 @@
-STAMP: 20241118-233505
+STAMP: 20241119-230520
 OK: file codeforces.id is correct
 ERROR: file CMakeLists.txt is absent
 ERROR: file prj.codeforces/CMakeLists.txt is absent
@@ -9,6 +9,9 @@ ERROR: file prj.lab/complex/complex.cpp is absent
 ERROR: file prj.lab/rational/CMakeLists.txt is absent
 ERROR: file prj.lab/rational/rational.hpp is absent
 ERROR: file prj.lab/rational/rational.cpp is absent
+ERROR: file prj.lab/arrayd/CMakeLists.txt is absent
+ERROR: file prj.lab/arrayd/arrayd.hpp is absent
+ERROR: file prj.lab/arrayd/arrayd.cpp is absent
 ERROR: file prj.test/CMakeLists.txt is absent
 ERROR: file prj.test/arrayd_doctest.cpp is absent
 ERROR: file prj.test/complex_doctest.cpp is absent
