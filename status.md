@@ -1,4 +1,4 @@
-STAMP: 20241123-220706
+STAMP: 20241125-095225
 OK: file codeforces.id is correct
 ERROR: file CMakeLists.txt is absent
 ERROR: file prj.codeforces/CMakeLists.txt is absent
