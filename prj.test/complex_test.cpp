@@ -27,7 +27,7 @@ int main() {
 
   Complex del = n1 / n2;
   std::cout << del;
-  comlex g=n1/n2;
+  Complex g=n1/n2;
   std::cout <<1;
   std::cout <<2;
 }
