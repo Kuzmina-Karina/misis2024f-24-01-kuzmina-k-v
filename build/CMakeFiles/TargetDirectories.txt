@@ -1,0 +1,10 @@
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/CMakeFiles/edit_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/CMakeFiles/rebuild_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/CMakeFiles/edit_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/CMakeFiles/rebuild_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/complex/CMakeFiles/complex.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/complex/CMakeFiles/edit_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/complex/CMakeFiles/rebuild_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.test/CMakeFiles/complex_test.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.test/CMakeFiles/edit_cache.dir
+/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.test/CMakeFiles/rebuild_cache.dir
