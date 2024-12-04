@@ -130,6 +130,19 @@ complex/fast:
 .PHONY : complex/fast
 
 #=============================================================================
+# Target rules for targets named rational
+
+# Build rule for target.
+rational: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rational
+.PHONY : rational
+
+# fast build rule for target.
+rational/fast:
+	$(MAKE) $(MAKESILENT) -f prj.lab/rational/CMakeFiles/rational.dir/build.make prj.lab/rational/CMakeFiles/rational.dir/build
+.PHONY : rational/fast
+
+#=============================================================================
 # Target rules for targets named complex_test
 
 # Build rule for target.
@@ -142,6 +155,19 @@ complex_test/fast:
 	$(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/complex_test.dir/build.make prj.test/CMakeFiles/complex_test.dir/build
 .PHONY : complex_test/fast
 
+#=============================================================================
+# Target rules for targets named rational_test
+
+# Build rule for target.
+rational_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rational_test
+.PHONY : rational_test
+
+# fast build rule for target.
+rational_test/fast:
+	$(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/rational_test.dir/build.make prj.test/CMakeFiles/rational_test.dir/build
+.PHONY : rational_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -152,6 +178,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... complex"
 	@echo "... complex_test"
+	@echo "... rational"
+	@echo "... rational_test"
 .PHONY : help
 
 

@@ -42,3 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/complex/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/a1/misis2024f-24-01-kuzmina-k-v/build/prj.lab/rational/cmake_install.cmake")
+endif()
+

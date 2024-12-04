@@ -130,6 +130,20 @@ complex_test/fast:
 	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/complex_test.dir/build.make prj.test/CMakeFiles/complex_test.dir/build
 .PHONY : complex_test/fast
 
+# Convenience name for target.
+prj.test/CMakeFiles/rational_test.dir/rule:
+	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prj.test/CMakeFiles/rational_test.dir/rule
+.PHONY : prj.test/CMakeFiles/rational_test.dir/rule
+
+# Convenience name for target.
+rational_test: prj.test/CMakeFiles/rational_test.dir/rule
+.PHONY : rational_test
+
+# fast build rule for target.
+rational_test/fast:
+	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/rational_test.dir/build.make prj.test/CMakeFiles/rational_test.dir/build
+.PHONY : rational_test/fast
+
 complex_test.o: complex_test.cpp.o
 .PHONY : complex_test.o
 
@@ -154,6 +168,30 @@ complex_test.cpp.s:
 	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/complex_test.dir/build.make prj.test/CMakeFiles/complex_test.dir/complex_test.cpp.s
 .PHONY : complex_test.cpp.s
 
+rational_test.o: rational_test.cpp.o
+.PHONY : rational_test.o
+
+# target to build an object file
+rational_test.cpp.o:
+	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/rational_test.dir/build.make prj.test/CMakeFiles/rational_test.dir/rational_test.cpp.o
+.PHONY : rational_test.cpp.o
+
+rational_test.i: rational_test.cpp.i
+.PHONY : rational_test.i
+
+# target to preprocess a source file
+rational_test.cpp.i:
+	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/rational_test.dir/build.make prj.test/CMakeFiles/rational_test.dir/rational_test.cpp.i
+.PHONY : rational_test.cpp.i
+
+rational_test.s: rational_test.cpp.s
+.PHONY : rational_test.s
+
+# target to generate assembly for a file
+rational_test.cpp.s:
+	cd /Users/a1/misis2024f-24-01-kuzmina-k-v/build && $(MAKE) $(MAKESILENT) -f prj.test/CMakeFiles/rational_test.dir/build.make prj.test/CMakeFiles/rational_test.dir/rational_test.cpp.s
+.PHONY : rational_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,9 +201,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... complex_test"
+	@echo "... rational_test"
 	@echo "... complex_test.o"
 	@echo "... complex_test.i"
 	@echo "... complex_test.s"
+	@echo "... rational_test.o"
+	@echo "... rational_test.i"
+	@echo "... rational_test.s"
 .PHONY : help
 
 

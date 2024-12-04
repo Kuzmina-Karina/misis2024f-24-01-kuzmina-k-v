@@ -3,20 +3,12 @@
 
 int main() {
   Complex n1;
-  Complex n3;
-  double n2;
+  Complex n2; 
   std::cin >> n1;
   std::cin >> n2;
-  std::cin >> n3;
-
-  if (n1==n3){
-    std::cout << '1' << "\n";
-  }
-  else{
-    std::cout << '0' << "\n";
-  }
 
   Complex sum = n1 + n2;
+
   std::cout << sum << "\n";
 
   Complex raz = n1 - n2;
@@ -28,6 +20,4 @@ int main() {
   Complex del = n1 / n2;
   std::cout << del;
   Complex g=n1/n2;
-  std::cout <<1;
-  std::cout <<2;
 }
