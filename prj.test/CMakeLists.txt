@@ -6,3 +6,4 @@ target_link_libraries(rational_test rational)
 
 add_executable(complex_doctest complex_doctest.cpp)
 target_link_libraries(complex_doctest complex)
+#доктест хз зачем нужен 
