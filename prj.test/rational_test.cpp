@@ -3,8 +3,8 @@
 
 int main() {
   Rational n1;
-  Rational n2; 
-  int32_t n3;
+  Rational n3; 
+  //int32_t n3;
   std::cin >> n1 >> n3;
   //std::cin >> n2;
   //std::cin >> n3;
@@ -21,4 +21,11 @@ int main() {
   Rational del = n1 / n3;
   std::cout << del;
   Rational g=n1/n3;
+
+  if(n3<n1){
+    std::cout <<"YES";
+  }
+  else{
+    std::cout << "NO";
+  }
 }

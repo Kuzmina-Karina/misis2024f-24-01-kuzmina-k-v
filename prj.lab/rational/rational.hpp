@@ -5,15 +5,18 @@
 #include <iostream>
 #include <sstream>
 
-struct Rational {
+class Rational {
+    public:
     Rational() = default;
     explicit Rational (const int32_t chislitel);
     Rational (const int32_t chislitel, const int32_t znamenatel);
-    int32_t chis{0};
-    int32_t znam{1};   
-    const char cent = '/';
     bool operator==(const Rational& r);
     bool operator!=(const Rational& r);
+    bool operator<(const Rational& rhs) const;
+    bool operator<=(const Rational& rhs) const;
+    bool operator>(const Rational& rhs) const;
+    bool operator>=(const Rational& rhs) const;
+
     Rational& operator=(const Rational& r);
     Rational& operator+=(const Rational& r);
     Rational& operator+=(const int32_t r);
@@ -25,8 +28,11 @@ struct Rational {
     Rational& operator/=(const Rational& r);
     std::istream& read(std::istream& istr);
     std::ostream& write(std::ostream& ostr);
-
-    void norm();
+private:
+    void norm(); 
+    int32_t chis{0};
+    int32_t znam{1};   
+    const char cent = '/';
 };
 
 bool testVvod (const std::string& s);
@@ -48,6 +54,4 @@ Rational operator+(const int32_t l, const Rational& r);
 Rational operator-(const int32_t l, const Rational& r);
 Rational operator*(const int32_t l, const Rational& r);
 Rational operator/(const int32_t l, const Rational& r);
-
-
 #endif

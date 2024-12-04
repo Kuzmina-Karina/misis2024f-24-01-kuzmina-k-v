@@ -30,22 +30,6 @@ bool Rational::operator==(const Rational& r) {
 	else
 		return false;
 }
-bool operator>(const Rational l, const Rational r) {
-	Rational s=l;
-	s -= r;
-	if (l.chis> 0)
-		return true;
-	else
-		return false;
-}
-bool operator<(const Rational l, const Rational r) {
-	Rational s=l;
-	s -= r;
-	if (l.chis< 0)
-		return true;
-	else
-		return false;
-}
 bool Rational:: operator!=( const Rational& r) {
 	if (chis == r.chis and znam==r.znam)
 		return false;
@@ -53,6 +37,20 @@ bool Rational:: operator!=( const Rational& r) {
 		return true;
 }
 
+
+/////
+bool Rational::operator<(const Rational& r) const{
+    return (chis*r.znam < r.chis*znam);
+}
+bool Rational::operator<=(const Rational& r) const{
+    return (chis*r.znam <= r.chis*znam);
+}
+bool Rational::operator>(const Rational& r) const{
+    return (chis*r.znam > r.chis*znam);
+}
+bool Rational::operator>=(const Rational& r) const{
+    return (chis*r.znam >= r.chis*znam);
+}
 
 /////
 Rational& Rational::operator+=(const Rational& r) {
