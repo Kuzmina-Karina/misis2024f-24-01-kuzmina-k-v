@@ -11,6 +11,7 @@ Complex& Complex::operator*=(const double ri) {
     Complex t = {ri, 0.0};
     Complex temp = {re, mn};
     temp *= t;
+    return *this;
 }
 Complex operator*(const Complex& l, const Complex& ri) {
     return Complex(l.re * ri.re - l.mn*ri.mn, l.re*ri.mn + l.mn*ri.re);
@@ -50,6 +51,7 @@ Complex& Complex::operator/=(const double ri) {
     Complex t = {ri, 0.0};
     Complex temp = {re, mn};
     temp /= t;
+    return *this;
 }
 Complex  operator/(const Complex& l, const Complex& ri) {
     double temp = ri.re * ri.re + ri.mn * ri.mn;
@@ -61,7 +63,7 @@ Complex  operator/(const Complex& l, const Complex& ri) {
 }
 Complex operator/(const Complex& l, const  double r){
     Complex t={r, 0.0};
-    return t/l;
+    return l/t;
 }
 Complex operator/(const double l, const Complex& r){
     Complex t={l, 0.0};
@@ -80,6 +82,7 @@ Complex& Complex::operator+=(const double ri) {
     Complex t = {ri, 0.0};
     Complex temp = {re, mn};
     temp += t;
+    return *this;
 }
 Complex operator+(const Complex& l, const  Complex& r){
     Complex sum(l); 
@@ -97,8 +100,6 @@ Complex operator+(const double l, const Complex& r){
 
 
 
-
-
 Complex& Complex::operator-=(const Complex& ri){
     re-=ri.re;
     mn-=ri.mn; 
@@ -108,6 +109,7 @@ Complex& Complex::operator-=(const double ri) {
     Complex t = {ri, 0.0};
     Complex temp = {re, mn};
     temp -= t;
+    return *this;
 }
 Complex operator-(const Complex& l, const Complex& r){
     Complex vch(l); 
@@ -116,7 +118,7 @@ Complex operator-(const Complex& l, const Complex& r){
 }
 Complex operator-(const Complex& l, const  double r){
     Complex t={r, 0.0};
-    return t-l;
+    return l-t;
 }
 Complex operator-(const double l, const Complex& r){
     Complex t={l, 0.0};
@@ -124,19 +126,18 @@ Complex operator-(const double l, const Complex& r){
 }
 
 
-
-
-
 //ВВОД
-bool testVvod (const std::string& s){
+bool CHECK (const std::string& s){
     std::istringstream istr(s);
     Complex z;
     istr >> z;
     if (istr.good()){
         std::cout << "correct" << s << " " << z;
+        return true;
     }
     else{
         std::cout << "error vvod" << s << " " << z; 
+        return false;
     }
 }
 std::istream& Complex:: read(std::istream& istr){
@@ -157,7 +158,7 @@ std::istream& Complex:: read(std::istream& istr){
 }
 
 std::ostream& Complex:: write(std::ostream& ostr){
-    ostr << lBort << re << cent << mn << rBort << std::endl;
+    ostr << lBort << re << cent << mn << rBort;
     return ostr;
 }
 Complex :: Complex(const double real, const double imaginary){ re = real; mn=imaginary; }

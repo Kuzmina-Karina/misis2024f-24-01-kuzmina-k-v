@@ -33,7 +33,7 @@ struct Complex {
     std::ostream& write(std::ostream& ostr);
 };
 
-bool testVvod (const std::string& s);
+bool CHECK (const std::string& s);
 
 std::istream& operator>>(std::istream& istr, Complex& ri);
 std::ostream& operator<<(std::ostream& ostr, Complex& ri);

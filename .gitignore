@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+bin.dbg
+build
+status.logs
+codeforces.id
+status.md
+.DS_Store
