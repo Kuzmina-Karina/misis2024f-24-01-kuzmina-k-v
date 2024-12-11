@@ -10,12 +10,14 @@ struct Complex {
     explicit Complex (const double real);
     Complex (const double real, const double imaginary);
     double re{ 0.0 };
-    double mn{ 0.0 };   
+    double im{ 0.0 };   
     const char lBort = '{';
     const char rBort = '}';
     const char cent = ',';
     bool operator==(const Complex& ri);
     bool operator!=(const Complex& ri);
+    Complex& operator=(const Complex& ri);
+    Complex& operator-();
 
     Complex& operator+=(const Complex& ri);
     Complex& operator+=(const double ri);

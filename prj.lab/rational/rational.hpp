@@ -16,6 +16,7 @@ class Rational {
     bool operator<=(const Rational& rhs) const;
     bool operator>(const Rational& rhs) const;
     bool operator>=(const Rational& rhs) const;
+    Rational& operator-();
 
     Rational& operator=(const Rational& r);
     Rational& operator+=(const Rational& r);

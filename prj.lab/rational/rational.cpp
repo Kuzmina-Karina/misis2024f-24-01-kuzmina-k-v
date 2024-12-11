@@ -1,5 +1,11 @@
 #include<rational/rational.hpp>
 
+
+Rational& Rational::operator-(){
+	chis=-chis;
+    return *this;
+}
+
 /////
 int32_t gcd(int32_t a, int32_t b) {
 	while (b) {
@@ -102,6 +108,7 @@ Rational operator-(const Rational& l, const Rational& r) {
 	s -= r;
 	return s;
 }
+
 Rational operator-(const Rational& l, const  int32_t r){
     Rational t(r/1);
     return l-t;
