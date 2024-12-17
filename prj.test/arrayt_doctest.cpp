@@ -1,4 +1,4 @@
-/*#include <arrayd/arrayd.hpp>
+#include <arrayd/arrayd.hpp>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
@@ -6,9 +6,8 @@
 TEST_CASE("[arrayd] - ctor") {
   CHECK(ArrayD().Size() == 0);
 }
-*/
 
-
+/*
 #include <arrayt/arrayt.hpp>
 #include <iostream>
 
@@ -47,3 +46,4 @@ int main(){
         std::cout << a[i] << " ";
     }
 }
+*/

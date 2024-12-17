@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
 
 bool f(int n){
     int a, b, c, d;

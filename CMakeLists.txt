@@ -13,6 +13,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR}/bin.rel)
 
 include_directories(prj.lab)
 
-#add_subdirectory(prj.codeforces)
+add_subdirectory(prj.codeforces)
 add_subdirectory(prj.lab)
 add_subdirectory(prj.test) 
