@@ -6,7 +6,7 @@ Complex& Complex::operator=(const Complex& ri){
     im = ri.im;
     return *this;
 }
-bool Complex:: operator==(const Complex& ri){
+bool Complex:: operator==(const Complex& ri) const{
     double e=0.00001;
     if (abs(re-ri.re)<e and im-ri.im<e){
         return true;
@@ -15,6 +15,11 @@ bool Complex:: operator==(const Complex& ri){
         return false;
     }
 }
+bool Complex:: operator!=(const Complex& ri) const{
+    return !(*this == ri);
+}
+
+
 Complex& Complex::operator-(){
 	re=-re;
     im=-im;

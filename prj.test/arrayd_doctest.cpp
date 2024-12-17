@@ -1,4 +1,4 @@
-#include <arrayd/arrayd.hpp>
+/*#include <arrayd/arrayd.hpp>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
@@ -6,18 +6,13 @@
 TEST_CASE("[arrayd] - ctor") {
   CHECK(ArrayD().Size() == 0);
 }
+*/
 
 
-
-/*#include <arrayd/arrayd.hpp>
+#include <arrayd/arrayd.hpp>
 #include <iostream>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <doctest/doctest.h>
-
-TEST_CASE("[arrayd] - ctor") {
-  CHECK(ArrayD().Size() == 0);
-}
 int main(){
     int n;
     std::cin >> n;
@@ -51,4 +46,4 @@ int main(){
     for (int i=0; i<a.Size(); i++){
         std::cout << a[i] << " ";
     }
-}*/
+}

@@ -30,13 +30,13 @@ Rational& Rational::operator=(const Rational& r) {
 	znam = r.znam;
 	return *this;
 }
-bool Rational::operator==(const Rational& r) {
+bool Rational::operator==(const Rational& r) const {
 	if (chis == r.chis and znam==r.znam)
 		return true;
 	else
 		return false;
 }
-bool Rational:: operator!=( const Rational& r) {
+bool Rational:: operator!=( const Rational& r) const{
 	if (chis == r.chis and znam==r.znam)
 		return false;
 	else

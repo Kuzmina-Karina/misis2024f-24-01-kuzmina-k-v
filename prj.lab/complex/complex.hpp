@@ -14,8 +14,8 @@ struct Complex {
     const char lBort = '{';
     const char rBort = '}';
     const char cent = ',';
-    bool operator==(const Complex& ri);
-    bool operator!=(const Complex& ri);
+    bool operator==(const Complex& ri) const;
+    bool operator!=(const Complex& ri) const;
     Complex& operator=(const Complex& ri);
     Complex& operator-();
 
