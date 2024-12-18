@@ -15,7 +15,7 @@ public:
     void Pop(); // Удалить элемент из очереди
     float Top() const; // Получить элемент из начала очереди
     bool IsEmpty() const; // Проверка, пуста ли очередь
-    std::ptrdiff_t Size() const; // Получить размер очереди
+    std::ptrdiff_t Size(); // Получить размер очереди
     void Clear(); // Очистить очередь
 
 private:
@@ -25,7 +25,7 @@ private:
     };
     Node* head; //голова очереди
     Node* tail; //хвост очереди
-    std::ptrdiff_t size; //размер очереди
+    std::ptrdiff_t size_; //размер очереди
 };
 
 #endif
