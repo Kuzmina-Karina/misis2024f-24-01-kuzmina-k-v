@@ -16,7 +16,7 @@ int32_t gcd(int32_t a, int32_t b) {
 }
 void Rational::norm() {
 	if (znam == 0)
-		throw std::overflow_error("Divide by zero exception");
+		throw std::invalid_argument("Zero denumenator in Rational ctor");
 
 	int32_t Gcd = gcd(std::abs(chis), std::abs(znam));
 	chis /= Gcd;
@@ -149,7 +149,7 @@ Rational operator*(const int32_t l, const Rational& r){
 /////
 Rational& Rational::operator/=(const Rational& r) {
 	if (r.chis == 0 || r.znam == 0)
-		throw std::overflow_error("Divide by zero exception");
+		throw std::invalid_argument("Zero denumenator in Rational ctor");
 
 	chis *= r.znam;
 	znam *= r.chis;

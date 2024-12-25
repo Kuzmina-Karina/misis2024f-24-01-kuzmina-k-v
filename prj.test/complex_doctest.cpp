@@ -1,5 +1,3 @@
-// 2024 by Polevoi Dmitry under Unlicense
-
 #include <complex/complex.hpp>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN

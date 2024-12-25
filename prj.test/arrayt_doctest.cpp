@@ -1,10 +1,10 @@
-#include <arrayd/arrayd.hpp>
+#include <arrayt/arrayt.hpp>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-TEST_CASE("[arrayd] - ctor") {
-  CHECK(ArrayD().Size() == 0);
+TEST_CASE("[arrayt] - ctor") {
+  CHECK(ArrayT<double>().Size() == 0);
 }
 
 /*

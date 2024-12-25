@@ -1,5 +1,3 @@
-// 2024 by Polevoi Dmitry under Unlicense
-
 #include <rational/rational.hpp>
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
