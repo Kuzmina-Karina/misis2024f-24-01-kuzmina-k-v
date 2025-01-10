@@ -3,7 +3,7 @@
 //#include <doctest/doctest.h>
 #include <iostream>
 int main(){
-  Rational a(17, 3);  
-  a += 1;
-  std::cout << " " << a << std::endl;
+  Rational a =Rational(10,6);
+  Rational b =Rational(5, 3);  
+  std::cout << b << " " << a << std::endl;
 }

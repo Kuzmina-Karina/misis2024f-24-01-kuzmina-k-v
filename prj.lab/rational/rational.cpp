@@ -20,11 +20,13 @@ Rational::Rational(int32_t number, int32_t denomi) {
 	znam = denomi;
 	//std::cout << "1111111111111111111111";
 	//std:: cout << chis << " " << znam;
+	norm();
 }
 
 Rational::Rational(const Rational& copy) {
 	chis = copy.chis;
 	znam = copy.znam;
+	norm();
 	//std::cout << chis << " " << znam;
 }
 
@@ -104,7 +106,7 @@ Rational& Rational::operator+=(const Rational& r) {
 	Rational rhs=r;
 	//std::cout << " " << chis;
 	chis*=rhs.znam;
-	
+	//std::cout << " " << chis;
 	rhs.chis*=znam;
 	znam*=rhs.znam;
 	chis+=rhs.chis;
@@ -114,11 +116,13 @@ Rational& Rational::operator+=(const Rational& r) {
 }
 //17/3 1/1
 Rational& Rational::operator+=(const int32_t r) {
-    Rational t(r/1);
-    Rational temp(chis/znam);
+    Rational t=Rational(r,1);
+    Rational temp = Rational(chis, znam);
 	//std::cout << chis << " " << znam << " " << temp;
     temp += t;
 	//std::cout <<" " << temp << " " << chis << " "<< znam <<" ";
+	chis=temp.chis;
+	znam=temp.znam;
     return *this;
 }
 Rational operator+(const Rational& l, const Rational& r) {
@@ -127,11 +131,11 @@ Rational operator+(const Rational& l, const Rational& r) {
 	return s;
 }
 Rational operator+(const Rational& l, const  int32_t r){
-    Rational t(r/1);
+    Rational t=Rational(r,1);
     return t+l;
 }
 Rational operator+(const int32_t l, const Rational& r){
-    Rational t(l/1);
+    Rational t=Rational(l,1);
     return t+r;
 }
 
@@ -146,9 +150,11 @@ Rational& Rational::operator-=(const Rational& r) {
 	return *this;
 }
 Rational& Rational::operator-=(const int32_t r) {
-    Rational t(r/1);
-    Rational temp (chis/znam);
+    Rational t=Rational(r,1);
+    Rational temp =Rational(chis,znam);
     temp -= t;
+	chis=temp.chis;
+	znam=temp.znam;
     return *this;
 }
 Rational operator-(const Rational& l, const Rational& r) {
@@ -158,11 +164,11 @@ Rational operator-(const Rational& l, const Rational& r) {
 }
 
 Rational operator-(const Rational& l, const  int32_t r){
-    Rational t(r/1);
+    Rational t=Rational(r,1);
     return l-t;
 }
 Rational operator-(const int32_t l, const Rational& r){
-    Rational t(l/1);
+    Rational t=Rational(l,1);
     return t-r;
 }
 
@@ -174,9 +180,11 @@ Rational& Rational::operator*=(const Rational& r) {
 	return *this;
 }
 Rational& Rational::operator*=(const int32_t r) {
-    Rational t(r/1);
-    Rational temp (chis/znam);
+    Rational t=Rational(r,1);
+    Rational temp =Rational(chis,znam);
     temp *= t;
+	chis=temp.chis;
+	znam=temp.znam;
     return *this;
 }
 Rational operator*(const Rational& l, const Rational& r) {
@@ -185,11 +193,11 @@ Rational operator*(const Rational& l, const Rational& r) {
 	return s;
 }
 Rational operator*(const Rational& l, const  int32_t r){
-    Rational t(r/1);
+    Rational t=Rational(r,1);
     return t*l;
 }
 Rational operator*(const int32_t l, const Rational& r){
-    Rational t(l/1);
+    Rational t=Rational(l,1);
     return t*r;
 }
 
@@ -205,10 +213,12 @@ Rational& Rational::operator/=(const Rational& r) {
 	return *this;
 }
 Rational& Rational::operator/=(const int32_t r) {
-    Rational t(r/1);
-    Rational temp (chis/znam);
+    Rational t=Rational(r,1);
+    Rational temp =Rational(chis,znam);
     temp /= t;
-    return *this;
+	chis=temp.chis;
+	znam=temp.znam;
+    return temp;
 }
 Rational operator/(const Rational& l, const Rational& r) {
     Rational s=l;
@@ -216,7 +226,7 @@ Rational operator/(const Rational& l, const Rational& r) {
 	return s;
 }
 Rational operator/(const Rational& l, const  int32_t r){
-    Rational t(r/1);
+    Rational t=Rational(r,1);
     return l/t;
 }
 Rational operator/(const int32_t l, const Rational& r){
