@@ -3,10 +3,47 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-TEST_CASE("[arrayt] - ctor") {
-  CHECK(ArrayT<double>().Size() == 0);
+TEST_CASE("Testing own library of template array") {
+	ArrayT<int> a(5);
+	CHECK(a[0] == 0);
+	CHECK(a[4] == 0);
+	for (std::ptrdiff_t i = 0; i < a.Size(); i++) {
+		a[i] = double(i);
+	}
+	CHECK(a[1] == 1);
+	REQUIRE(a.Size() == 5);
+	CHECK_THROWS(a.Resize(-1));
+	SUBCASE("Resize") {
+		CHECK(a.Size() == 5);
+		a.Resize(3);
+		CHECK_THROWS(a[4]);
+		CHECK(a.Size() == 3);
+		a.Resize(8);
+		CHECK(a[7] == 0);
+		CHECK_THROWS(a[9]);
+	}
+	SUBCASE("Remove") {
+		for (std::ptrdiff_t i = 0; i < a.Size(); i++)
+		{
+			a[i] = i;
+		}
+		a.Remove(0);
+		CHECK(a[0] == 1);
+		a.Remove(3);
+		CHECK(a[2] == 3);
+	}
+	SUBCASE("Insert") {
+		a.Insert(1, 11);
+		CHECK(a[1] == 11);
+		CHECK(a.Size() == 6);
+		CHECK(a[2] == 1);
+		CHECK(a[5] == 4);
+		CHECK(a.Size() == 6);
+		a.Insert(0, 12);
+		CHECK(a[0] == 12);
+		CHECK(a.Size() == 7);
+	}
 }
-
 /*
 #include <arrayt/arrayt.hpp>
 #include <iostream>
