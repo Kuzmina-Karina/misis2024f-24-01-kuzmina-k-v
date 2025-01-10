@@ -102,7 +102,7 @@ bool Rational::operator>=(const Rational& r) const{
 /////
 Rational& Rational::operator+=(const Rational& r) {
 	Rational rhs=r;
-	std::cout << " " << chis;
+	//std::cout << " " << chis;
 	chis*=rhs.znam;
 	
 	rhs.chis*=znam;
