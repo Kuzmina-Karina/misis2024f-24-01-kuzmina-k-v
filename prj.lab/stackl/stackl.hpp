@@ -3,41 +3,32 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <iostream>
 
 class StackL{
 public:
   using T = std::uint8_t;
 public:
   StackL() = default;
-
   StackL(const StackL& src);
-
-  StackL(StackL&& src) noexcept;
-  
+  StackL(StackL&& src);
   ~StackL() = default;
+
   
   StackL& operator=(const StackL& src);
-
-  StackL& operator=(StackL&& src) noexcept;
-
-  [[nodiscard]] bool IsEmpty() const noexcept;
-
-  void Pop() noexcept;
-
+  StackL& operator=(StackL&& src);
+  bool IsEmpty() const;
+  void Pop();
   void Push(const T val);
-  
-  [[nodiscard]] T& Top() &;
-
-  [[nodiscard]] const T& Top() const &;
-
-  void Clear() noexcept;
+  T& Top();
+  void Clear();
 
 private:
   struct Node {
     T val = T();
     Node* next = nullptr;
   };
-  Node* head_ = nullptr;   //!< 
+  Node* head_ = nullptr;
 };
 
 #endif

@@ -10,7 +10,9 @@ class Rational {
     Rational() = default;
     explicit Rational (const int32_t chislitel);
     Rational (const int32_t chislitel, const int32_t znamenatel);
+    Rational(const Rational& copy);
     bool operator==(const Rational& r) const;
+    bool operator==(const int32_t& r) const;    
     bool operator!=(const Rational& r) const;
     bool operator<(const Rational& rhs) const;
     bool operator<=(const Rational& rhs) const;

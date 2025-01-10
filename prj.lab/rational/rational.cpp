@@ -1,4 +1,32 @@
 #include<rational/rational.hpp>
+#include<numeric>
+
+
+Rational::Rational(int32_t number) {
+	chis = number;
+	znam = 1;
+}
+
+Rational::Rational(int32_t number, int32_t denomi) {
+	
+	if (denomi < 0) {
+		denomi *= -1;
+		number *= -1;
+	}
+	if (denomi == 0) {
+		throw std::invalid_argument("Divide by zero exception");
+	}
+	chis = number;
+	znam = denomi;
+	//std::cout << "1111111111111111111111";
+	//std:: cout << chis << " " << znam;
+}
+
+Rational::Rational(const Rational& copy) {
+	chis = copy.chis;
+	znam = copy.znam;
+	//std::cout << chis << " " << znam;
+}
 
 
 Rational& Rational::operator-(){
@@ -14,15 +42,22 @@ int32_t gcd(int32_t a, int32_t b) {
 	}
 	return a;
 }
+
 void Rational::norm() {
 	if (znam == 0)
 		throw std::invalid_argument("Zero denumenator in Rational ctor");
 
 	int32_t Gcd = gcd(std::abs(chis), std::abs(znam));
+	//std::cout << chis << " " <<znam;
 	chis /= Gcd;
 	znam /= Gcd;
+	
+	if (znam<0){
+		znam*=(-1);
+		chis*=(-1);
+	}
+	
 }
-
 
 /////
 Rational& Rational::operator=(const Rational& r) {
@@ -32,6 +67,12 @@ Rational& Rational::operator=(const Rational& r) {
 }
 bool Rational::operator==(const Rational& r) const {
 	if (chis == r.chis and znam==r.znam)
+		return true;
+	else
+		return false;
+}
+bool Rational::operator==(const int32_t& r) const {
+	if (chis == r and znam==1)
 		return true;
 	else
 		return false;
@@ -60,17 +101,24 @@ bool Rational::operator>=(const Rational& r) const{
 
 /////
 Rational& Rational::operator+=(const Rational& r) {
-	int32_t coef = r.znam / gcd(std::abs(znam), r.znam);
-	chis *= coef;
-	znam *= coef;
-	chis += znam / r.znam * r.chis;
+	Rational rhs=r;
+	std::cout << " " << chis;
+	chis*=rhs.znam;
+	
+	rhs.chis*=znam;
+	znam*=rhs.znam;
+	chis+=rhs.chis;
+	
 	norm();
 	return *this;
 }
+//17/3 1/1
 Rational& Rational::operator+=(const int32_t r) {
     Rational t(r/1);
-    Rational temp (chis/znam);
+    Rational temp(chis/znam);
+	//std::cout << chis << " " << znam << " " << temp;
     temp += t;
+	//std::cout <<" " << temp << " " << chis << " "<< znam <<" ";
     return *this;
 }
 Rational operator+(const Rational& l, const Rational& r) {
@@ -193,8 +241,6 @@ std::ostream& Rational::write(std::ostream& ostrm)
     ostrm << chis << cent << znam;
 	return ostrm;
 }
-Rational :: Rational(const int32_t chislitel, const int32_t znamenatel){ chis = chislitel; znam=znamenatel; }
-Rational :: Rational(const int32_t chislitel): Rational(chislitel, 1) {}
 
 std::istream& Rational::read(std::istream& istrm)
 {

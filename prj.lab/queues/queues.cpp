@@ -1,4 +1,4 @@
-#include "queues.hpp"
+#include <queues/queues.hpp>
 
  // Конструктор
 queues::queues(){

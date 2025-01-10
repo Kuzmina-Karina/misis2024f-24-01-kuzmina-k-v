@@ -16,8 +16,8 @@ target_link_libraries(rational_doctest rational)
 #add_executable(queuea_doctest rational_test.cpp)
 #target_link_libraries(queuea_doctest queuea)
 
-#add_executable(stackl_doctest rational_test.cpp)
-#target_link_libraries(stackl_doctest stackl)
+add_executable(stackl_doctest stackl_doctest.cpp)
+target_link_libraries(stackl_doctest stackl)
 
 add_executable(arrayt_doctest arrayt_doctest.cpp)
 target_link_libraries(arrayt_doctest arrayt)
